@@ -52,6 +52,10 @@ def expenses_list_create(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+
+
+
 @api_view(['GET'])
 def monthly_summary(request):
     user_id = request.query_params.get('user_id')

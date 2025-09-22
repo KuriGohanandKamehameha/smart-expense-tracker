@@ -21,6 +21,8 @@ function App() {
   const [monthlyReport, setMonthlyReport] = useState(null);
 
 
+
+
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/users/')
       .then(res => setUsers(res.data))
@@ -121,14 +123,11 @@ function App() {
             <th>Date</th>
           </tr>
         </thead>
-        <tbody>
-          {expenses.map(exp => (
-            <tr key={exp.id}>
-              <td>{categories.find(c => c.id === exp.category)?.name || exp.category}</td>
-              <td>{exp.expenditure_amount}</td>
-              <td>{exp.expenditure_date}</td>
-            </tr>
-          ))}
+        <tbody> {expenses.map(exp => ( <tr key={exp.id}>
+            <td>{categories.find(c => c.id === exp.category)?.name || exp.category}</td>
+        <td>{exp.expenditure_amount}</td>
+        <td>{exp.expenditure_date}</td>
+        </tr> ))}
         </tbody>
       </table>
 
