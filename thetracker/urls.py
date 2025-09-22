@@ -17,7 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from tracker import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('api/users/', views.users_list_create),
+    path('api/categories/', views.categories_list_create),
+    path('api/expenses/', views.expenses_list_create),
 ]
