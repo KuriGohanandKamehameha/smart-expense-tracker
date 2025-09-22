@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/users/', views.users_list_create),
     path('api/categories/', views.categories_list_create),
     path('api/expenses/', views.expenses_list_create),
+    path('api/reports/monthly_summary/', views.monthly_summary),
 ]
